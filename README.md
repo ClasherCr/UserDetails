@@ -1,50 +1,93 @@
-# Welcome to your Expo app 👋
+# Random User Profile Viewer
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## Overview
 
-## Get started
+A React Native application built with Expo that fetches and displays 80 random user profiles from an external API. Features a modern interface with field labels on the left and values in rounded capsules, combined with intuitive navigation controls.
 
-1. Install dependencies
+## Features
 
-   ```bash
-   npm install
-   ```
+- **80 User Profiles:** Fetches 80 users from [Random Data API](https://random-data-api.com/) using `?size=80` parameter.
+- **Capsule-style UI:**  
+  - Left-aligned field labels (ID, UID, Password, etc.).  
+  - Right-aligned values in rounded capsules.  
+  - User avatar with border and shadow effects.  
+- **Navigation System:**  
+  - Symmetric bottom navigation bar.  
+  - Previous/Next buttons with disabled states.  
+  - Current position indicator (X of 80).  
+- **Error Handling:** Graceful error states with retry capability.  
+- **Responsive Design:** Optimized for various screen sizes using Flexbox.  
+- **Type Safety:** Built with TypeScript for better code quality.  
 
-2. Start the app
+## Installation & Running Locally
 
-   ```bash
-    npx expo start
-   ```
+### Prerequisites
 
-In the output, you'll find options to open the app in a
+- [Node.js](https://nodejs.org/en/) (v16 or later)
+- [Expo CLI](https://docs.expo.dev/get-started/installation/)
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+### Steps
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+#### Clone the Repository
 
 ```bash
-npm run reset-project
+git clone <https://github.com/ClasherCr/UserDetails>
+cd <UserDetails>
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+#### Install Dependencies
 
-## Learn more
+```bash
+npm install
+# or
+yarn install
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+#### Start Development Server
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```bash
+expo start
+```
 
-## Join the community
+#### Run the App
 
-Join our community of developers creating universal apps.
+- **Mobile:** Scan QR code with Expo Go app (iOS/Android).  
+- **Simulator:** Press `i` (iOS) or `a` (Android) in terminal.  
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Technical Details
+
+### API Endpoint:
+
+```bash
+https://random-data-api.com/api/users/random_user?size=80
+```
+
+### Styling:
+
+- Tailwind CSS via NativeWind.  
+- Responsive layout using Flexbox.  
+- Shadow effects and border radius for depth.  
+
+### State Management:
+
+- React `useState` / `useEffect`.  
+
+### Type Safety:
+
+- TypeScript interfaces for API responses.  
+
+## Additional Notes
+
+- **Internet Required:** Real-time API data fetching.  
+- **Styling Setup:** Ensure NativeWind configuration:  
+
+```bash
+npm install nativewind
+```
+
+- **Error States:** Network errors show a retry prompt.  
+- **Pagination:** Users are pre-loaded for smooth navigation.  
+
+## License
+
+MIT License - see `LICENSE` for details.
